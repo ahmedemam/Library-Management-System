@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL = parse_url('postgres://tvztpmcxxcbqrp:10f26f84b88ed5466cefa7962f97592bad0948e88a2ba1f4eee2a4a6a158047f@ec2-23-23-92-204.compute-1.amazonaws.com:5432/d2kgfstbgn63eq');
+// $DATABASE_URL = parse_url('postgres://tvztpmcxxcbqrp:10f26f84b88ed5466cefa7962f97592bad0948e88a2ba1f4eee2a4a6a158047f@ec2-23-23-92-204.compute-1.amazonaws.com:5432/d2kgfstbgn63eq');
+$url = parse_url(getenv("DATABASE_URL"));
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
 return [
 
     /*
@@ -62,20 +67,16 @@ return [
             ]) : [],
         ],
 
-        'pgsql' => [
+        'pgsql' => array(
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
-        ],
-
+        ),
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'localhost'),
