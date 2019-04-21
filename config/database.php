@@ -49,7 +49,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'lib_mngmt_sys'),
             'username' => env('DB_USERNAME', 'ahmedemam'),
-            'password' => env('DB_PASSWORD', '011421264482014zizo'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
