@@ -2,12 +2,6 @@
 
 use Illuminate\Support\Str;
 
-// $DATABASE_URL = parse_url('postgres://tvztpmcxxcbqrp:10f26f84b88ed5466cefa7962f97592bad0948e88a2ba1f4eee2a4a6a158047f@ec2-23-23-92-204.compute-1.amazonaws.com:5432/d2kgfstbgn63eq');
-$url = parse_url(getenv("DATABASE_URL"));
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 return [
 
     /*
@@ -50,10 +44,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'lib_mngmt_sys'),
-            'username' => env('DB_USERNAME', 'ahmedemam'),
+            'database' => env('DB_DATABASE', 'root'),
+            'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
