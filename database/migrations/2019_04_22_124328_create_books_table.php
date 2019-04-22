@@ -17,11 +17,12 @@ class CreateBooksTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->text('author');
-            $table->text('image');
-            $table->text('copiesNumber');
-            $table->text('leaseFee');
-            $table->foreign('categ_id')
+            $table->string('author');
+            $table->string('image');
+            $table->decimal('copiesNumber');
+            $table->float('leaseFee');
+            $table->float('rate');
+            $table->foreign('category_id')
             ->reference('id')
             ->on('categories');
             $table->timestamps();
