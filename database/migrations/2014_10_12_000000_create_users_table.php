@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('national_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('isManager')->default('no'+);
+            $table->string('isManager')->default('no');
             $table->string('status')->default('active');
             $table->rememberToken();
             $table->timestamps();

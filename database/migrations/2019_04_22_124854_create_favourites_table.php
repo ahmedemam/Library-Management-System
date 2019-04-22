@@ -25,9 +25,7 @@ class CreateFavouritesTable extends Migration
 
             $table->foreign('book_id')
             ->references('id')
-            ->on('books');
-
-            
+            ->on('books');      
         });
     }
 

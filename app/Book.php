@@ -13,4 +13,15 @@ class Book extends Model
     {
         return $this->hasMany('App\Review');
     }
+
+    public function books(){
+
+        return $this->hasMany('App\Book');
+    }
+
+     public function user(){
+
+            return $this->belongsTo('App\Book');
+        }
+    }
 }
