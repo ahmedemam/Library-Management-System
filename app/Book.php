@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    //
+
+
+    public function Reviews()
+    {
+        return $this->hasMany('App\Review');
+    }
+
     public function books(){
 
         return $this->hasMany('App\Book');
@@ -16,3 +24,4 @@ class Book extends Model
             return $this->belongsTo('App\Book');
         }
     }
+}
