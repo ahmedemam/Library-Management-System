@@ -61,8 +61,8 @@ return [
             ]) : [],
         ],
         'pgsql' => [
-            'driver'   => 'pgsql',
-            'host'     => $host,
+            'driver' => 'pgsql',
+            'host' => $host,
             'database' => $database,
             'username' => $username,
             'password' => $password,
