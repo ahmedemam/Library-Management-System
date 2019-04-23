@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262b88d6-0ae9-437f-8ee8-55da0fe32dc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_22_160619_create_categoreys_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_22_160619_create_categoreys_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="262b88d6-0ae9-437f-8ee8-55da0fe32dc4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_124328_create_books_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="54">
+              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -75,11 +72,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_160619_create_categoreys_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="510">
+              <caret line="30" column="40" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="40" />
+              <folding>
+                <element signature="e#7#52#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,9 +187,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="155" />
-    <option name="y" value="122" />
-    <option name="width" value="1201" />
-    <option name="height" value="646" />
+    <option name="y" value="119" />
+    <option name="width" value="1191" />
+    <option name="height" value="649" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -267,18 +267,17 @@
       <updated>1555969982647</updated>
       <workItem from="1555969985671" duration="3226000" />
       <workItem from="1556004739681" duration="464000" />
-      <workItem from="1556008579264" duration="2347000" />
+      <workItem from="1556008579264" duration="3183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6037000" />
+    <option name="totallyTimeSpent" value="6873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -293,7 +292,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32874355" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4698795" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4698795" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -344,13 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_150658_create_reviews_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
@@ -368,6 +360,23 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55fb5f69-ea6e-4628-b41c-f70a19267dd8/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_160619_create_categoreys_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <element signature="e#7#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_150658_create_reviews_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_124854_create_favourites_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -377,15 +386,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_124328_create_books_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_22_160619_create_categoreys_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="54">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
