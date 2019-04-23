@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBooksTable extends Migration
 {
@@ -22,9 +22,8 @@ class CreateBooksTable extends Migration
             $table->decimal('copiesNumber');
             $table->float('leaseFee');
             $table->float('rate');
-            $table->foreign('category_id')
-            ->reference('id')
-            ->on('categories');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->reference('id')->on('categories');
             $table->timestamps();
         });
     }

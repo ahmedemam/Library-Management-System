@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateReviewsTable extends Migration
 {
@@ -18,8 +18,10 @@ class CreateReviewsTable extends Migration
             $table->timestamps();
             $table->string('review');
             $table->integer('rate');
-            $table->foreign('userId')->references('id')->on('users');
-            $table->foreign('bookId')->references('id')->on('books');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('book_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('book_id')->references('id')->on('books');
         });
     }
 
