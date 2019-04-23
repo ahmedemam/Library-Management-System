@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('review');
-            $table->integer('rate');
+            $table->float('rate');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
             $table->foreign('user_id')->on('users')->references('id');
