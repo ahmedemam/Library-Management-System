@@ -17,15 +17,9 @@ class CreateFavouritesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->integer('book_id')->unsigned();
+            $table->foreign('user_id')->on('users')->references('id');
+            $table->foreign('book_id')->on('books')->references('id');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
-
-            $table->foreign('book_id')
-                ->references('id')
-                ->on('books');
         });
     }
 

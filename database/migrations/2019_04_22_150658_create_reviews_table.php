@@ -20,8 +20,9 @@ class CreateReviewsTable extends Migration
             $table->integer('rate');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->foreign('user_id')->on('users')->references('id');
+            $table->foreign('book_id')->on('books')->references('id');
+            $table->timestamps();
         });
     }
 
