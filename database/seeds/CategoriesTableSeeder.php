@@ -11,12 +11,6 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-
-        DB::table('users')->insert([
-            'name' => Str::random(10),
-            'details' => Str::random(10),
-            
-        ]);
+        factory('App\Category', 20)->create();
     }
 }
