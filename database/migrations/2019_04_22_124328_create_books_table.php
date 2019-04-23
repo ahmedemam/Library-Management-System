@@ -23,7 +23,7 @@ class CreateBooksTable extends Migration
             $table->float('leaseFee');
             $table->float('rate');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->on('categories')->reference('id');
+            $table->foreign('category_id')->on('categories')->references('id');
             $table->timestamps();
         });
     }
