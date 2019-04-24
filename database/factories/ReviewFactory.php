@@ -17,7 +17,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(App\Review::class, function (Faker $faker) {
     return [
         'rate' => $faker->numberBetween($min = 1, $max = 95),
         'review' => $faker->text(),
