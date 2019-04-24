@@ -5,6 +5,7 @@
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use \Illuminate\Database\Eloquent\Factory;
 
 /*
 |--------------------------------------------------------------------------

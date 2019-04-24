@@ -3,6 +3,7 @@
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
 use App\Category;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(App\Book::class, function (Faker $faker) {
@@ -14,7 +15,9 @@ $factory->define(App\Book::class, function (Faker $faker) {
         'copiesNumber' => $faker->randomDigit,
         'leaseFee' => $faker->randomDigit,
         'rate' => 0,
-        'category_id' => factory(Category::class)->create()->id,
+        'category_id' => function () {
+            return Category::all()->random();
+        }
     ];
 });
 
