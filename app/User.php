@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -15,6 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     use SoftDeletes;
+    public $timestamps = true;
     protected $fillable = [
         'name', 'email', 'password', 'address', 'phone', 'national_id', 'isManager', 'status',
     ];

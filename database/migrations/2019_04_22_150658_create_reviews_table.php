@@ -22,6 +22,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('book_id');
             $table->foreign('user_id')->on('users')->references('id');
             $table->foreign('book_id')->on('books')->references('id');
+            $table->softDeletes();
         });
     }
 
