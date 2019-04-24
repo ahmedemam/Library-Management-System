@@ -2,12 +2,14 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Model;
+use App\Favourite;
+use App\User;
+use App\Book;
 use Faker\Generator as Faker;
 
-$factory->define(App\Favourite::class, function (Faker $faker) {
+$factory->define(Favourite::class, function (Faker $faker) {
     return [
-         'user_id' => factory('App\User')->create()->id,
-          'book_id' => factory('App\Book')->create()->id
+         'user_id' => factory(User::class)->create()->id,
+          'book_id' => factory(Book::class)->create()->id
     ];
 });

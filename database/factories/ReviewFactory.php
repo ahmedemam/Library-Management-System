@@ -3,7 +3,8 @@
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
 use App\Review;
-use Illuminate\Support\Str;
+use App\User;
+use App\Book;
 use Faker\Generator as Faker;
 
 /*
@@ -17,11 +18,11 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Review::class, function (Faker $faker) {
+$factory->define(Review::class, function (Faker $faker) {
     return [
         'rate' => $faker->numberBetween($min = 1, $max = 95),
         'review' => $faker->text(),
-        'userId' => factory('App\User')->create()->id,
-        'bookId' => factory('App\Book')->create()->id,
+        'userId' => factory(User::class)->create()->id,
+        'bookId' => factory(Book::class)->create()->id,
     ];
 });
