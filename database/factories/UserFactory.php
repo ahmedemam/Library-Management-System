@@ -31,6 +31,3 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-/*
-$table->string('national_id')->nullable();
- */

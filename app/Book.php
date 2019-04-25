@@ -16,20 +16,25 @@ class Book extends Model
         'image',
         'copiesNumber',
         'leaseFee',
-        'rate'
+        'rate',
     ];
     public function reviews()
     {
         return $this->hasMany('App\Review');
     }
 
-    public function books()
+    public function category()
     {
-        return $this->hasMany('App\Book');
+        return $this->belongsTo('App\Category');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Book');
+        return $this->belongsTo('App\User');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
     }
 }
