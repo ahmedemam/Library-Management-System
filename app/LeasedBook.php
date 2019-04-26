@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LeasedBooks extends Model
+class LeasedBook extends Model
 {
     public function user(){
         return $this->belongsTo('App\User');
