@@ -4,11 +4,10 @@
 
 use App\Category;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 $factory->define(Category::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'details' => $faker->details,
+        'name' => $faker->unique()->name,
+        'details' => $faker->realText(255, 1),
     ];
 });

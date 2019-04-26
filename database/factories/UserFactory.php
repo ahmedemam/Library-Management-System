@@ -1,11 +1,9 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
-
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
-use \Illuminate\Database\Eloquent\Factory;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +17,16 @@ use \Illuminate\Database\Eloquent\Factory;
  */
 
 $factory->define(User::class, function (Faker $faker) {
+    $storage_path = storage_path() . 'public/storages/images';
     return [
         'name' => $faker->name,
+        'image' => $faker->imageUrl(50, 50, 'abstract', true, true, 'Faker'),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => bcrypt(str_random(10)),
         'remember_token' => Str::random(10),
-        'phone' => $faker->unique()->phone,
+        'phone' => $faker->unique()->phoneNumber,
         'address' => $faker->address,
-        'national_id' => $faker->unique()->ssn
+        'national_id' => $faker->unique()->ssn,
     ];
 });
-

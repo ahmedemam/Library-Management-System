@@ -1,9 +1,9 @@
 <?php
 
-use App\Category;
+use App\Favourite;
 use Illuminate\Database\Seeder;
 
-class CategoriesTableSeeder extends Seeder
+class FavouritesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 20)->create();
+        factory(Favourite::class, 200)->create();
     }
 }
