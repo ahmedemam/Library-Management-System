@@ -3,25 +3,38 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Book extends Model
 {
-    //
-
-
-    public function Reviews()
+    use SoftDeletes;
+    public $timestamps = true;
+    protected $fillable = [
+        'title',
+        'description',
+        'author',
+        'image',
+        'copiesNumber',
+        'leaseFee',
+        'rate',
+    ];
+    public function reviews()
     {
         return $this->hasMany('App\Review');
     }
 
-    public function books(){
-
-        return $this->hasMany('App\Book');
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
     }
 
-     public function user(){
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
-            return $this->belongsTo('App\Book');
-        }
+    public function users()
+    {
+        return $this->belongsTo('App\User');
     }
 }

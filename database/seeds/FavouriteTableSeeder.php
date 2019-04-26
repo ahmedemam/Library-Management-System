@@ -1,5 +1,6 @@
 <?php
 
+use App\Favourite;
 use Illuminate\Database\Seeder;
 
 class FavouriteTableSeeder extends Seeder
@@ -11,7 +12,6 @@ class FavouriteTableSeeder extends Seeder
      */
     public function run()
     {
-            factory('App\Favourite', 200)->create();
-
+        factory(Favourite::class, 200)->create();
     }
 }

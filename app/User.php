@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -14,6 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    use SoftDeletes;
+    public $timestamps = true;
     protected $fillable = [
         'name', 'email', 'password', 'address', 'phone', 'national_id', 'isManager', 'status',
     ];
@@ -43,10 +46,6 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany('App\Review');
-    }
-    public function comments()
-    {
-        return $this->hasMany('App\Comment');
     }
     public function favourites()
     {
