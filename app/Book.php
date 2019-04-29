@@ -16,7 +16,7 @@ class Book extends Model
         'image',
         'copiesNumber',
         'leaseFee',
-        'rate'
+        'rate',
     ];
     public function reviews()
     {
