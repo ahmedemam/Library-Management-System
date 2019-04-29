@@ -26,7 +26,7 @@
         </tr>
         @foreach ($users as $user)
             <tr>
-                <td>{{ $user->image }}</td>
+                <td><img src="{{ $user->image }}" alt="user image"></td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
