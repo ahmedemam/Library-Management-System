@@ -36,9 +36,9 @@
                 <td>
                     <form action="{{ route('admin.destroy',$user->id) }}" method="POST">
                         <a class="btn btn-info" href="{{ route('admin.show',$user->id) }}">Show</a>
-                        @can('update',$user)
-                            <a class="btn btn-primary" href="{{ route('admin.edit',$user->id) }}">Edit</a>
-                        @endcan
+                        {{--                        @can('update',$user)--}}
+                        <a class="btn btn-primary" href="{{ route('admin.edit',$user->id) }}">Edit</a>
+                        {{--                        @endcan--}}
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
