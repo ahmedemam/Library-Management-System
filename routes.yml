@@ -1,0 +1,40 @@
+#+--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
+#| Domain | Method    | URI                    | Name             | Action                                                                 | Middleware   |
+#+--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
+#|        | GET|HEAD  | /                      |                  | Closure                                                                | web          |
+#|        | POST      | admin                  | admin.store      | App\Http\Controllers\AdminController@store                             | web          |
+#|        | GET|HEAD  | admin                  | admin.index      | App\Http\Controllers\AdminController@index                             | web          |
+#|        | GET|HEAD  | admin/create           | admin.create     | App\Http\Controllers\AdminController@create                            | web          |
+#|        | DELETE    | admin/{admin}          | admin.destroy    | App\Http\Controllers\AdminController@destroy                           | web          |
+#|        | PUT|PATCH | admin/{admin}          | admin.update     | App\Http\Controllers\AdminController@update                            | web          |
+#|        | GET|HEAD  | admin/{admin}          | admin.show       | App\Http\Controllers\AdminController@show                              | web          |
+#|        | GET|HEAD  | admin/{admin}/edit     | admin.edit       | App\Http\Controllers\AdminController@edit                              | web          |
+#|        | GET|HEAD  | api/user               |                  | Closure                                                                | api,auth:api |
+#|        | GET|HEAD  | home                   | home             | App\Http\Controllers\HomeController@index                              | web,auth     |
+#|        | POST      | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+#|        | GET|HEAD  | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+#|        | POST      | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+#|        | POST      | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+#|        | POST      | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+#|        | GET|HEAD  | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+#|        | GET|HEAD  | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+#|        | GET|HEAD  | user                   | user.index       | App\Http\Controllers\UserController@index                              | web          |
+#|        | POST      | user                   | user.store       | App\Http\Controllers\UserController@store                              | web          |
+#|        | GET|HEAD  | user/create            | user.create      | App\Http\Controllers\UserController@create                             | web          |
+#|        | GET|HEAD  | user/{user}            | user.show        | App\Http\Controllers\UserController@show                               | web          |
+#|        | PUT|PATCH | user/{user}            | user.update      | App\Http\Controllers\UserController@update                             | web          |
+#|        | DELETE    | user/{user}            | user.destroy     | App\Http\Controllers\UserController@destroy                            | web          |
+#|        | GET|HEAD  | user/{user}/edit       | user.edit        | App\Http\Controllers\UserController@edit                               | web          |
+#+--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
+
+# guest
+# user/books/
+# user/favourite
+# user/categories
+# user/leasedBooks
+# user/reviews
+# user/profile
+# admin/users
+# admin/books
+# admin/categories
+# admin/charts

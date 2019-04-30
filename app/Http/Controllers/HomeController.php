@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -15,7 +13,10 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function admin()
+    {
+        return view('admin');
+    }
     /**
      * Show the application dashboard.
      *

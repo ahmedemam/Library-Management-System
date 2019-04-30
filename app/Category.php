@@ -10,6 +10,7 @@ class Category extends Model
     //
     use SoftDeletes;
     public $timestamps = true;
+    protected $dates = ['deleted_at'];
     protected $fillable = ['name', 'details'];
     public function books()
     {

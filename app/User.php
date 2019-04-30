@@ -17,6 +17,7 @@ class User extends Authenticatable
      */
     use SoftDeletes;
     public $timestamps = true;
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'name', 'email', 'password', 'address', 'phone', 'national_id', 'isManager', 'status',
     ];
