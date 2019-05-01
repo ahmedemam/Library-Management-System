@@ -6,7 +6,7 @@ use App\Review;
 use App\Book;
 use Illuminate\Http\Request;
 
-class ReviewBook extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +21,8 @@ class ReviewBook extends Controller
 
     public function index($id)
     {
-        $book = Book::where('id',$id);
-        return view('book.index')->with('storedBook', $book);
+        $comments = Review::where('book_id',$id);
+        return view('book.index')->with('storedComments', $comments);
     }
 
     /**
