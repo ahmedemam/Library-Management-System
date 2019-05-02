@@ -26,11 +26,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/favourite', 'FavouriteController');
 
-// Route::get('/books', 'BookController');
-
 Route::resource('/home/admin','AdminController');
 Route::resource('/home/user','UserController');
 Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('login');
+
 });
+
+//! books routes
+Route::resource('/books', 'BookController');
