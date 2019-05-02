@@ -25,8 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// Route::get('/books', 'BookController');
-
 Route::resource('/home/admin','AdminController');
 Route::resource('/home/user','UserController');
 Route::get('logout', function () {
@@ -34,3 +32,5 @@ Route::get('logout', function () {
     return Redirect::to('login');
 });
 
+//! books routes
+Route::resource('/books', 'BookController');
