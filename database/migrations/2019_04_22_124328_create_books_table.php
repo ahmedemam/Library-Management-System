@@ -23,9 +23,16 @@ class CreateBooksTable extends Migration
             $table->float('leaseFee');
             $table->float('rate');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->on('categories')->references('id');
+         
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('books', function (Blueprint $table) {
+           
+           
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+           
         });
     }
 
