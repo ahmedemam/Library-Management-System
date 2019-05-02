@@ -24,7 +24,7 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);;
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::resource('/favourite', 'FavouriteController');
 
 // Route::get('/books', 'BookController');
 
@@ -34,4 +34,3 @@ Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('login');
 });
-
