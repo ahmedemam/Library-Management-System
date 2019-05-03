@@ -11,11 +11,9 @@
 |
  */
 
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +26,7 @@ Route::resource('/favourites', 'FavouriteController');
 
 Route::resource('/admin','AdminController');
 Route::resource('/user','UserController');
+
 Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('login');
@@ -35,4 +34,6 @@ Route::get('logout', function () {
 });
 
 //! books routes
+Route::get('books/latest', 'BookController@getLatest')->name('books.latest');
+Route::get('books/rate', 'BookController@getHighRated')->name('books.rate');
 Route::resource('/books', 'BookController');
