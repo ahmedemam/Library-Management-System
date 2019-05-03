@@ -37,8 +37,16 @@
                   <h5 class="card-title">{{$book->title}}</h5>
                   <p class="card-text">{{str_limit($book->description, 75)}}</p>
                   <div class="d-flex justify-content-between align-items-center">
+                    
                     <p class="m-0">{{number_format($book->copiesNumber)}} copies available</p>
-                    <button class="btn btn-danger">Fav</button>
+                     <form action="{{route('favourites.store')}}" method="POST">
+                      {{ csrf_field() }}
+                     <input type="hidden" value={{Auth::id()}} name="user_id">
+
+                      <input type="hidden" value={{$book->id}} name="book_id">
+                      <button type="submit" class="btn btn-danger">Fav</button>
+                    </form>
+                   
                   </div>
                   <div>
                     <a href="{{route('books.show', ['chosenBook'=> $book->id])}}" class="btn btn-primary w-100 mt-3">Go To Book Page</a>

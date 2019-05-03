@@ -24,7 +24,7 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);;
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource('/favourite', 'FavouriteController');
+Route::resource('/favourites', 'FavouriteController');
 
 Route::resource('/admin','AdminController');
 Route::resource('/user','UserController');
