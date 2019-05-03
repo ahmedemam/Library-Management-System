@@ -19,13 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/favourite', 'FavouriteController');
+Auth::routes(['register' => false]);;
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::resource('/favourites', 'FavouriteController');
 
-Route::resource('/home/admin', 'AdminController');
-Route::resource('/home/user', 'UserController');
+Route::resource('/admin','AdminController');
+Route::resource('/user','UserController');
+
 Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('login');
