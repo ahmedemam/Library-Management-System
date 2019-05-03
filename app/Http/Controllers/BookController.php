@@ -20,14 +20,30 @@ class BookController extends Controller
     //     $this->middleware('auth');
     // }
 
-    // ! all books
+    //! all books
     public function index()
     {
         // $books = Book::all()->paginate(3);
-        $books = Book::orderBy('id')->paginate(3);
+        $books = Book::orderBy('id')->paginate(6);
         $categories = Category::all();
         return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
         // return view('booksList', ['books' => $books]);
+    }
+
+    //! all books by latest
+    public function getLatest()
+    {
+        $books = Book::orderBy('created_at', 'desc')->paginate(6);
+        $categories = Category::all();
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+    }
+
+    //! all books by latest
+    public function getHighRated()
+    {
+        $books = Book::orderBy('rate', 'desc')->paginate(6);
+        $categories = Category::all();
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
     }
 
     /**
