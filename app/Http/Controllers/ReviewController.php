@@ -14,15 +14,14 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
-    public function index($id)
+    public function index()
     {
-        $comments = Review::where('book_id',$id);
-        return view('book.index')->with('storedComments', $comments);
+        
     }
 
     /**
@@ -30,9 +29,9 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createReview()
+    public function create()
     {
-        return view('book.index');
+        return redirect()->route('reviews.index');
     }
 
     
@@ -43,13 +42,15 @@ class ReviewController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function storeReview(Request $request)
+    public function store(Request $request)
     {
+        echo "hellostore";
         $this->validate($request, [
             'review' => 'required|min:10|max:255',
         ]);
         $review = new Review;
-        $review->user_id = Auth::user()->id();
+        //$review->user_id = Auth::user()->id();
+        $review->user_id = 1;
         $review->review = $request->review;
         $review->rate = $request->rate;
         $review->book_id = $request->book_id;
@@ -58,7 +59,7 @@ class ReviewController extends Controller
         $review->save();
         avgRate($request->book_id);
         Session::flash('success', 'New review has been succesfully added!');
-        //   return redirect()->route('books.index');
+        return redirect()->route('reviews.index');
     }
 
 

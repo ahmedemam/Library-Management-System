@@ -37,3 +37,5 @@ Route::get('logout', function () {
 Route::get('books/latest', 'BookController@getLatest')->name('books.latest');
 Route::get('books/rate', 'BookController@getHighRated')->name('books.rate');
 Route::resource('/books', 'BookController');
+Route::resource('/comments', 'CommentController');
+Route::resource('books.comments', 'CommentController');
