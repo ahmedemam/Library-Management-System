@@ -7,6 +7,7 @@
   <section class="row">
     <div class="col-sm-8">
       <div class="media">
+          {{-- /storage/book_images/ --}}
         <img src="/storage/book_images/{{$book->image}}" class="mr-3" alt="{{$book->title}}" width="200" height="350">
         <div class="media-body">
           <h5 class="mt-0">{{$book->title}}</h5>
