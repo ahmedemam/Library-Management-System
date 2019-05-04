@@ -33,6 +33,13 @@ Route::get('logout', function () {
     return Redirect::to('login');
 
 });
+Route::get('/category/create', 'CategoryController@create');
+Route::get('/category/getall/{id}', 'CategoryController@getallbooks');
+Route::get('/category', 'CategoryController@index');
 
+
+Route::post('/category/update', 'CategoryController@update');
+Route::resource('/category','CategoryController');
 //! books routes
 Route::resource('/books', 'BookController');
+Route::get('/books/lease/{id}/{user_id}', 'CategoryController@leasebooks');

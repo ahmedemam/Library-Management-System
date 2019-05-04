@@ -6,6 +6,28 @@
   <div class="text-center mb-5">
     <h1>Show all Books</h1>
   </div>
+  @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">
+            <strong>Whoops!</strong> leased succesfly.<br><br>
+            {{session('success')}}
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> {{session('error')}}.<br><br>
+            
+        </div>
+    @endif
   <div class="text-right">
     <a href="{{route('books.create')}}" class="btn btn-success">ADD New Book</a>
   </div>
@@ -18,7 +40,7 @@
         <ul class="list-unstyled">
           @foreach ($allCategories as $category)
           <li class="my-3">
-            <a href="#">{{$category->name}}</a>
+            <a href="{{url('/category/getall', [$category->id])}}">{{$category->name}}</a>
           </li>
           @endforeach
         </ul>
@@ -60,7 +82,8 @@
                     </form>
                   </div>
                   <div>
-                    <button class="btn btn-success w-100 mt-3">Lease</button>
+                    
+                    <a class="btn btn-success w-100 mt-3" href="{{url('/books/lease', [$book->id,Auth::user()->id])}}">Lease</a>
                   </div>
                 </div>
               </div>
