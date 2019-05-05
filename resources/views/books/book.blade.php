@@ -21,7 +21,13 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <button class="btn btn-danger">Fav</button>
+     <form action="{{route('favourites.store')}}" method="POST">
+                      {{ csrf_field() }}
+                     <input type="hidden" value={{Auth::id()}} name="user_id">
+
+                      <input type="hidden" value={{$book->id}} name="book_id">
+                      <button type="submit" class="btn btn-danger">Fav</button>
+                    </form>
     </div>
   </section>
 

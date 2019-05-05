@@ -26,7 +26,7 @@
               <div class="card">
                 <img src="/storage/book_images/{{$book->id}}" class="card-img-top w-100" height="250" alt="{{$book->title}}">
                 <div class="card-body">
-                  <h5 class="card-title">{{$book->book_id}}</h5>
+                  <h5 class="card-title">{{$book->name}}</h5>
                   <p class="card-text">{{str_limit($book->name, 75)}}</p>
                 
                  
@@ -50,8 +50,11 @@
       </div>
       {{-- ./books --}}
     </div>
-    <div class="text-center mt-5">
-      
+   
+      <div class="text-center mt-5">
+      <div class="d-inline-block">
+        {{$favouriteBooks->links()}}
+      </div>
     </div>
   </section>
 </div>
