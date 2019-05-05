@@ -22,7 +22,7 @@ class Book extends Model
     ];
     public function reviews()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany('App\Comment');
     }
     public function favourite()
     {

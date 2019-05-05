@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Category;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,19 +16,35 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+    //  public function __construct()
+    //  {
+    //      $this->middleware('auth');
+    //  }
 
-    // ! all books
+    //! all books
     public function index()
     {
         // $books = Book::all()->paginate(3);
-        $books = Book::orderBy('id')->paginate(3);
+        $books = Book::orderBy('id')->paginate(6);
         $categories = Category::all();
         return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
         // return view('booksList', ['books' => $books]);
+    }
+
+    //! all books by latest
+    public function getLatest()
+    {
+        $books = Book::orderBy('created_at', 'desc')->paginate(6);
+        $categories = Category::all();
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+    }
+
+    //! all books by latest
+    public function getHighRated()
+    {
+        $books = Book::orderBy('rate', 'desc')->paginate(6);
+        $categories = Category::all();
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
     }
 
     /**
@@ -96,7 +113,11 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::find($id);
-        return view('books.book')->with(['book' => $book]);
+        $comments = Comment::where('book_id',$id)->get();
+       // echo $book;
+       // $comments=$comments->toJson();
+       // echo $comments;
+        return view('books.book')->with(['book' => $book,'storedComments'=> $comments]);
     }
 
     /**

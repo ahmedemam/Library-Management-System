@@ -6,8 +6,42 @@
   <div class="text-center mb-5">
     <h1>Show all Books</h1>
   </div>
+
+  @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">
+            <strong>Whoops!</strong> leased succesfly.<br><br>
+            {{session('success')}}
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> {{session('error')}}.<br><br>
+            
+        </div>
+    @endif
   <div class="text-right">
+
+  <div class="d-flex justify-content-between col-sm-9 offset-md-3">
+
     <a href="{{route('books.create')}}" class="btn btn-success">ADD New Book</a>
+    <div>
+      <p class="mt-2 mb-0 mr-3 d-inline">Order By:</p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="{{route('books.index')}}" class="btn btn-secondary">All</a>
+        <a href="{{route('books.rate')}}" class="btn btn-secondary">Rate</a>
+        <a href="{{route('books.latest')}}" class="btn btn-secondary">Latest</a>
+      </div>
+    </div>
   </div>
   <!-- display Books -->
   <section class="mt-3">
@@ -18,7 +52,7 @@
         <ul class="list-unstyled">
           @foreach ($allCategories as $category)
           <li class="my-3">
-            <a href="#">{{$category->name}}</a>
+            <a href="{{url('/category/getall', [$category->id])}}">{{$category->name}}</a>
           </li>
           @endforeach
         </ul>
@@ -60,13 +94,16 @@
                     </form>
                   </div>
                   <div>
-                    <button class="btn btn-success w-100 mt-3">Lease</button>
+                    
+                    <a class="btn btn-success w-100 mt-3" href="{{url('/books/lease', [$book->id,Auth::user()->id])}}">Lease</a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          @endforeach @endif
+            @endforeach 
+          @else 
+            <h1> No Books in The Library </h1>
+          @endif
         </div>
       </div>
       {{-- ./books --}}
