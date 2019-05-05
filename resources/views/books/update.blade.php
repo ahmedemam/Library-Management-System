@@ -51,12 +51,12 @@
       </div>
     </div>
     {{-- image --}}
-    <div class="form-group row">
+    {{-- <div class="form-group row">
       <label class="col-sm-2" for="image">Book image</label>
       <div class="col-sm-8">
         <input type="file" name="updatedImage" value="{{$editedBook->image}}" class="form-control" />
       </div>
-    </div>
+    </div> --}}
     {{-- category --}}
     @if (count($allCategories) > 0)
     <div class="form-group row">

@@ -1,14 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "69e26e819793dea46f7ded0c20cee8d7",
-=======
-    "content-hash": "1efa020b906f7dd78bd9121efb738070",
->>>>>>> 620bacf5d25a5e2b25b74dd96cf3bad05a1620a9
+    "content-hash": "0b1daf8d14979f6d1875c72323b0e391",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1430,16 +1426,16 @@
         },
         {
             "name": "league/oauth2-server",
-            "version": "7.3.3",
+            "version": "7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "c7f499849704ebe2c60b45b6d6bb231df5601d4a"
+                "reference": "2eb1cf79e59d807d89c256e7ac5e2bf8bdbd4acf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/c7f499849704ebe2c60b45b6d6bb231df5601d4a",
-                "reference": "c7f499849704ebe2c60b45b6d6bb231df5601d4a",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/2eb1cf79e59d807d89c256e7ac5e2bf8bdbd4acf",
+                "reference": "2eb1cf79e59d807d89c256e7ac5e2bf8bdbd4acf",
                 "shasum": ""
             },
             "require": {
@@ -1503,7 +1499,7 @@
                 "secure",
                 "server"
             ],
-            "time": "2019-03-29T18:19:35+00:00"
+            "time": "2019-05-05T09:22:01+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2996,7 +2992,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -5025,16 +5021,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a"
+                "reference": "f2a2c8e1c97c11ace607a7a667d73d47c19fe404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
-                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/f2a2c8e1c97c11ace607a7a667d73d47c19fe404",
+                "reference": "f2a2c8e1c97c11ace607a7a667d73d47c19fe404",
                 "shasum": ""
             },
             "require": {
@@ -5074,7 +5070,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2019-04-25T07:55:20+00:00"
+            "time": "2019-05-05T09:05:15+00:00"
         },
         {
             "name": "sebastian/exporter",
