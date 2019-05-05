@@ -26,17 +26,20 @@
               <div class="card">
                 <img src="/storage/book_images/{{$book->id}}" class="card-img-top w-100" height="250" alt="{{$book->title}}">
                 <div class="card-body">
-                  <h5 class="card-title">{{$book->name}}</h5>
-                  <p class="card-text">{{str_limit($book->name, 75)}}</p>
+                  <h5 class="card-title">{{$book->title}}</h5>
+                  <p class="card-text">{{str_limit($book->description, 75)}}</p>
                 
                  
                   <div class="d-flex justify-content-around mt-3">
                   
-                    <form action="{{route('favourites.destroy', ['favourites' => $book->book_id])}}" method="POST">
-                      {{ csrf_field() }}
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    {!!Form::open(['action'=>['FavouriteController@destroy',$book->id],'method'=>'POST','class'=>'pull0right'])!!}
+
+    {{Form::hidden('_method','DELETE')}}
+    {{Form::submit('Delete',['class'=>'btn btn-danger'])}}
+
+
+    {!!Form::close()!!}
+
                   </div>
                   <div>
                     <button class="btn btn-success w-100 mt-3">Lease</button>
@@ -53,7 +56,7 @@
    
       <div class="text-center mt-5">
       <div class="d-inline-block">
-        {{$favouriteBooks->links()}}
+        {{-- {{$favouriteBooks->links()}} --}}
       </div>
     </div>
   </section>

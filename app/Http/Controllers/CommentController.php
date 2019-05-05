@@ -15,6 +15,12 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index($book_id)
     {
         
@@ -125,9 +131,11 @@ class CommentController extends Controller
      */
     public function destroy($id,$book_id)
     {
+
+       
         echo $id;
          $review = Comment::find($id)->delete();
-
+         $this->authorize('delete', $review);
       //  Session::flash('success', 'comment has been successfully deleted.');
       $book=Book::find($book_id);
       $comments = Comment::where('book_id',$book_id)->get();
