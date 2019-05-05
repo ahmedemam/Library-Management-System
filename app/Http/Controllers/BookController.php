@@ -192,4 +192,16 @@ class BookController extends Controller
         // }
         return redirect()->route('books.index');
     }
+
+    public function search(Request $request){
+    
+         $searchKey=$request->data;
+        
+         $books= Book::search($searchKey);
+         
+          $categories = Category::all();
+
+          return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+
+    }
 }

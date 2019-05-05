@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "69e26e819793dea46f7ded0c20cee8d7",
-    "content-hash": "1efa020b906f7dd78bd9121efb738070",
+    "content-hash": "c56835dd9439d399e28d5a27627482f5",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2993,7 +2992,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",

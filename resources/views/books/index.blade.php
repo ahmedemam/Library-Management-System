@@ -10,6 +10,14 @@
 <div class="d-flex justify-content-between col-sm-9 offset-md-3">
   <a href="{{route('books.create')}}" class="btn btn-success">ADD New Book</a>
   <div>
+      <form action="{{route('books.search')}}" method="POST">
+                    {{ csrf_field() }}
+
+                    <input type="text" value="" name="data">
+                    <button type="submit" class="btn btn-danger">Search</button>
+                  </form>
+  </div>
+  <div>
     <p class="mt-2 mb-0 mr-3 d-inline">Order By:</p>
     <div class="btn-group" role="group" aria-label="Basic example">
       <a href="{{route('books.index')}}" class="btn btn-secondary">All</a>

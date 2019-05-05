@@ -39,6 +39,8 @@ Route::get('/category', 'CategoryController@index');
 Route::post('/category/update', 'CategoryController@update');
 Route::resource('/category', 'CategoryController');
 //! books routes
+Route::post('books/search', 'BookController@search')->name('books.search');
+
 Route::get('books/latest', 'BookController@getLatest')->name('books.latest');
 Route::get('books/rate', 'BookController@getHighRated')->name('books.rate');
 Route::resource('/books', 'BookController');
