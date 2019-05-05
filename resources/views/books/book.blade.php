@@ -69,8 +69,9 @@
             <form action="{{ route('books.comments.destroy', ['reviews'=>$storedComment->id,$book->id]) }}"
               method='POST'>
               {{ csrf_field() }}
-              <input type="hidden" name='_method' value='DELETE'>
 
+              <input type="hidden" name='_method' value='DELETE'>
+                
               <input type="submit" class='btn btn-danger' value='Delete'>
             </form>
           </td>
