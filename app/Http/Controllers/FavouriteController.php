@@ -22,9 +22,7 @@ class FavouriteController extends Controller
     {
 
       $id=Auth::id();      
-     $favourite=Favourite::where('user_id',$id);
-     $favourites = $favourite->books()->get();
-    // $favourite=$favourite->books();
+     $favourites=Favourite::where('user_id',$id)->paginate(3);
       
      return view('favourites.index')->with('favouriteBooks',$favourites);
     }
