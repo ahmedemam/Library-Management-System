@@ -18,10 +18,10 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('author');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->decimal('copiesNumber');
             $table->float('leaseFee');
-            $table->float('rate');
+            $table->float('rate')->nullable();
             $table->unsignedBigInteger('category_id');
          
             $table->timestamps();
