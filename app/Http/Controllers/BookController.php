@@ -16,10 +16,10 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  public function __construct()
-    //  {
-    //      $this->middleware('auth');
-    //  }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     //! all books
     public function index()
@@ -113,11 +113,11 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::find($id);
-        $comments = Comment::where('book_id',$id)->get();
-       // echo $book;
-       // $comments=$comments->toJson();
-       // echo $comments;
-        return view('books.book')->with(['book' => $book,'storedComments'=> $comments]);
+        $comments = Comment::where('book_id', $id)->get();
+        // echo $book;
+        // $comments=$comments->toJson();
+        // echo $comments;
+        return view('books.book')->with(['book' => $book, 'storedComments' => $comments]);
     }
 
     /**

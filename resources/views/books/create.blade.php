@@ -1,6 +1,5 @@
 @extends('layouts.app') 
 @section('content')
-<main class="container">
   {{-- header --}}
   <div class="text-center mb-5">
     <h1>Add New Book to The Library</h1>
@@ -25,6 +24,8 @@
   </div>
   @endif 
   
+
+  @if (count($allCategories) > 0)
   {{-- Adding new Book Section --}}
   <section>
     <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
@@ -59,7 +60,7 @@
         </div>
       </div>
       {{-- category --}} 
-      @if (count($allCategories) > 0)
+      
       <div class="form-group row">
         <label class="col-sm-2" for="image">Book Category</label>
         <div class="col-sm-8">
@@ -70,7 +71,8 @@
         </select>
         </div>
       </div>
-      @endif {{-- copies number --}}
+      
+      {{-- copies number --}}
       <div class="form-group row">
         <label class="col-sm-2" for="copies">Number of Copies</label>
         <div class="col-sm-8">
@@ -89,6 +91,9 @@
         <button type="submit" class="btn btn-success">Add Book</button>
       </div>
     </form>
+    @else
+    <h4>You Need To create a new category</h4>
+    <a class="btn btn-primary" href="{{ route('category.create') }}"> Create Category</a>
+    @endif 
   </section>
-</main>
 @endsection

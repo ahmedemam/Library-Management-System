@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 
 class Book extends Model
 {
+     use Searchable;
     use SoftDeletes;
     public $timestamps = true;
     protected $dates = ['deleted_at'];
@@ -22,6 +24,11 @@ class Book extends Model
     {
         return $this->hasMany('App\Comment');
     }
+    public function favourite()
+    {
+        return $this->belongsTo('App\Favourite');
+    }
+
 
     public function category()
     {
@@ -36,5 +43,15 @@ class Book extends Model
     public function users()
     {
         return $this->belongsTo('App\User');
+    }
+
+      public function searchableAs()
+    {
+        return 'title';
+    }
+  
+    public function getScoutKey()
+    {
+        return $this->title;
     }
 }
