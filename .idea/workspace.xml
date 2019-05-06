@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="262b88d6-0ae9-437f-8ee8-55da0fe32dc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-    </list>
+    <list default="true" id="262b88d6-0ae9-437f-8ee8-55da0fe32dc4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="560">
               <caret line="96" column="43" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="43" />
               <folding>
                 <element signature="e#45#81#0#PHP" expanded="true" />
@@ -397,12 +395,12 @@
       <workItem from="1556623002109" duration="2243000" />
       <workItem from="1556831952461" duration="29000" />
       <workItem from="1556832023644" duration="1928000" />
-      <workItem from="1557146992690" duration="4672000" />
+      <workItem from="1557146992690" duration="4743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69374000" />
+    <option name="totallyTimeSpent" value="69445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
@@ -748,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="560">
           <caret line="96" column="43" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="43" />
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
