@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -19,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         // return all users
-        $users = User::all();
+        $books = User::orderBy('id')->paginate(6);
         return view('admin.index', compact('users'));
     }
 
@@ -86,16 +88,16 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string',
-            'image' => 'required|string',
-            'phone' => 'required|string|max:15|unique:users',
-            'address' => 'required|string|max:255',
-            'national_id' => 'required',
-            'status' => 'required'
-        ]);
+//        $request->validate([
+//            'name' => 'required|string|max:255',
+//            'email' => 'required|email|unique:users',
+//            'password' => 'required|string',
+//            'image' => 'required|string',
+//            'phone' => 'required|string|max:15|unique:users',
+//            'address' => 'required|string|max:255',
+//            'national_id' => 'required',
+//            'status' => 'required'
+//        ]);
         $user = User::find($id);
         $user->update($request->all());
 
@@ -116,5 +118,9 @@ class AdminController extends Controller
             ->with('success', 'User deleted successfully');
     }
 
+    public function authUserData()
+    {
+        return view('admin.profile', Auth::user());
 
+    }
 }
