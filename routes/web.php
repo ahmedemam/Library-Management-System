@@ -35,11 +35,12 @@ Route::get('logout', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/profile', 'AdminController@userProfile')->name('profile');
 Route::get('admin/', 'HomeController@admin')->middleware('admin');
 Route::get('/category/create', 'CategoryController@create');
 Route::get('/category', 'CategoryController@index');
 Route::post('/category/update', 'CategoryController@update');
-Route::resource('/category','CategoryController');
+Route::resource('/category', 'CategoryController');
 Route::get('/category/create', 'CategoryController@create');
 Route::get('/category/getall/{id}', 'CategoryController@getallbooks');
 Route::get('/category', 'CategoryController@index');

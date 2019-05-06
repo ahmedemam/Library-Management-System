@@ -5,9 +5,9 @@
             <div class="pull-left">
                 <h2>User Profile</h2>
             </div>
-{{--            <div class="pull-right">--}}
-{{--                <a class="btn btn-primary" href="{{ route('admin.index') }}"> Back</a>--}}
-{{--            </div>--}}
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('admin.index') }}"> Back</a>
+            </div>
         </div>
     </div>
     @if ($errors->any())
@@ -21,7 +21,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.update',$user->id) }}" method="POST">
+    <form action="{{ route('admin.updateProfile',$user->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
@@ -74,22 +74,8 @@
                            placeholder="National ID">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Status:</strong>
-                    <input type="text" name="status" value="{{ $user->status }}" class="form-control"
-                           placeholder="Status">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>isAdmin:</strong>
-                    <input type="text" name="isAdmin" value="{{ $user->isAdmin }}" class="form-control"
-                           placeholder="isManager">
-                </div>
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
             </div>
         </div>
     </form>
