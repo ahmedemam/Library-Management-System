@@ -30,7 +30,7 @@ class CommentPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id > 0;
     }
 
     /**
