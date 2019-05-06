@@ -36,6 +36,9 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<!-- Left Side Of Navbar -->
 					<ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Users</a>
+                        </li>
 						<li class="nav-item active">
 							<a class="nav-link" href="/books">My Books<span class="sr-only">(current)</span></a>
 						</li>
@@ -64,7 +67,10 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="{{ route('admin.profile') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Profile') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
 								</a>
 
