@@ -38,3 +38,13 @@
 # admin/books
 # admin/categories
 # admin/charts
+
+# 0- Login Direct [ active/inactive/user/admin... ]
+# 1- Admin Finish - Admin Navbar/Admin-Pagination/Admin Profile
+# 2- User Finish - User Navbar / ....
+# 3- Books Functions
+# 4- Category Functions
+# 5- Favourite Functions
+# 6- Review Functions
+# 7- Charts
+# 8- Search / Ordered

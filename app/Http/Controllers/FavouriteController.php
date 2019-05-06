@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Favourite;
+use App\Book;
 use Auth;
 
 use Illuminate\Http\Request;
@@ -21,8 +22,15 @@ class FavouriteController extends Controller
     {
 
       $id=Auth::id();      
-      $favourites=Favourite::where('user_id',$id)->paginate(5);
-      return view('favourites.index')->with('favourites', $favourites);
+     $favourite=Favourite::where('user_id',$id)->get();
+     $favourites=[];
+     foreach ($favourite as $key) {
+         
+        array_push($favourites,Book::find($key->book_id));
+     }
+    
+     
+      return view('favourites.index')->with('favouriteBooks',$favourites);
     }
 
 
@@ -38,24 +46,32 @@ class FavouriteController extends Controller
         $favourite = new Favourite;
         $favourite->book_id = $request->book_id;
         $favourite->user_id = $request->user_id;
+
+        $book=Favourite::where('book_id',$request->book_id)->get();
        
-            $favourite->save();
-        Session::flash('success', 'New book has been sucessfully added to your Favourites .');
-        return redirect()->route('favourites.index');
+         
+
+        if(count($book)>0){
+          return redirect()->route('favourites.index');
+        }
+        else{    
+        $favourite->save();
+         return redirect()->route('favourites.index');
+        }
     }
 
 
    
 
-
-
-
-
     public function destroy($id)
     {
-        $favourite = Favourite::find($id);
-        $favourite->delete();
-        return redirect()->route('favourites.index');
+   
+        
+    $favourites=Favourite::where('book_id',$id);
+    $favourites->delete();
+      
+  
+   return redirect()->route('favourites.index')->with('success','category deleted succesfly');
     }
 
 

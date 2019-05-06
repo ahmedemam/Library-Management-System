@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\Book;
+use App\LeasedBook;
+
 use Illuminate\Http\Request;
 
 // use Illuminate\Http\Request;
@@ -50,7 +53,7 @@ class CategoryController extends Controller
         $category->name=$request->input('name');
         $category->details=$request->input('details');
         $category->save();
-        return redirect('/category')->with('success','category created succesfly');
+        return redirect()->route('books.index')->with('success','category created succesfly');
     }
 
     /**
@@ -95,7 +98,7 @@ class CategoryController extends Controller
         $category->name=$request->input('name');
         $category->details=$request->input('details');
         $category->save();
-        return redirect('/category')->with('success','category updated succesfly');
+        return redirect()->route('books.index')->with('success','category updated succesfly');
     }
 
     /**
@@ -109,6 +112,41 @@ class CategoryController extends Controller
         //
         $category=Category::find($id);
         $category->delete();
-        return redirect('/category')->with('success','category deleted succesfly');
+        return redirect()->route('books.index')->with('success','category deleted succesfly');
     }
+    
+    public function getallbooks($id)
+    {
+        //
+        $category=Category::find($id);
+        // $category->delete();
+        $match=['category_id' => $id];
+        $books=Book::where($match)->get();
+
+        return view('category.categorybooks')->with(['category'=>$category,'storedBooks'=>$books]);
+    }
+       
+    public function leasebooks($id,$user_id)
+    {
+        //
+        $book = Book::find($id);
+      if($book->copiesNumber>0)
+      {
+        $book->copiesNumber =$book->copiesNumber - 1 ;
+        $book->save();
+        $leasedbook=new LeasedBook ;
+
+        // $category->delete();
+       $leasedbook->user_id=$user_id;
+       $leasedbook->book_id=$id;
+       $leasedbook->save();
+       return redirect()->route('books.index');
+      }
+      else
+      {
+        return redirect()->route('books.index')->with('error','sorry all copies are leased');
+      }
+    
+    }
+    
 }

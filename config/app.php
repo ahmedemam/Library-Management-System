@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+          Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
