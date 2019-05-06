@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
+Route::get("admin/routes", "HomeController@admin")->middleware("admin");
 Route::get('/', function () {
     return view('welcome');
 });

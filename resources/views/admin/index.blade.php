@@ -47,4 +47,9 @@
             </tr>
         @endforeach
     </table>
+    <div class="text-center mt-5">
+        <div class="d-inline-block">
+            {{$users->links()}}
+        </div>
+    </div>
 @endsection

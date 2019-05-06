@@ -22,7 +22,7 @@ class User extends Authenticatable
     public $timestamps = true;
     protected $dates = ['deleted_at'];
     protected $fillable = [
-        'name', 'email', 'password', 'address', 'phone', 'national_id', 'isManager', 'status',
+        'name', 'email', 'password', 'address', 'phone', 'national_id', 'isAdmin', 'status',
     ];
 
     /**
