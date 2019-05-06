@@ -47,7 +47,7 @@ class LoginController extends Controller
         return [
             'email' => $request->{$this->username()},
             'password' => $request->password,
-            'status' => 'yes',
+//            'status' => 'yes',
         ];
     }
 
