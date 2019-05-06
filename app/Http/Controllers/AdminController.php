@@ -86,21 +86,16 @@ class AdminController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $id)
     {
-//        $request->validate([
-//            'name' => 'required|string|max:255',
-//            'email' => 'required|email|unique:users',
-//            'password' => 'required|string',
-//            'image' => 'required|string',
-//            'phone' => 'required|string|max:15|unique:users',
-//            'address' => 'required|string|max:255',
-//            'national_id' => 'required',
-//            'status' => 'required'
-//        ]);
         $user = User::find($id);
+        $request->validate([
+            'name' => ['required', "unique:users,user_name,$user->id"],
+            'email' => ['required', "unique:users,email,$user->id"],
+            'national_id' => ['required', "unique:users,national_id,$user->id"],
+            'phone' => ['required', 'min:5', "unique:users,phone,$user->id"]
+        ]);
         $user->update($request->all());
-
         return redirect()->route('admin.index')
             ->with('success', 'User updated successfully');
     }
@@ -118,8 +113,20 @@ class AdminController extends Controller
             ->with('success', 'User deleted successfully');
     }
 
-    public function authUserData()
+    public function userProfile()
     {
         return view('admin.profile', Auth::user());
+    }
+
+    public function updateProfile(Request $request, User $user)
+    {
+        $this->validate($request, [
+            'user_name' => ['required', "unique:users,user_name,$user->id"],
+            'email' => ['required', "unique:users,email,$user->id"],
+            'national_id' => ['required', "unique:users,national_id,$user->id"],
+            'phone' => ['required', 'min:5', "unique:users,email,$user->id"]
+        ]);
+        $user->update($request->all());
+        return redirect()->route('admin.profile', ['user' => $user])->with('success', 'updated');
     }
 }

@@ -9,8 +9,8 @@ class Admin
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -18,6 +18,6 @@ class Admin
         if (auth()->user()->isManager == 'yes') {
             return $next($request);
         }
-        return redirect(‘home’)->with("error", "You have not admin access");
+        return redirect('unauthorized');
     }
 }
