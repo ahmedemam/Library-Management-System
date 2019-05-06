@@ -68,10 +68,13 @@ class CommentController extends Controller
     public function store(Request $request,$book_id)
     {
         // echo "hello";
-        
+        $user = Auth::user();
+        $this->authorize('create', $user);
+    
         $this->validate($request, [
             'review' => 'required|min:10|max:255',
         ]);
+        
         $review = new Comment;
         //$review->user_id = Auth::user()->id();
         $review->user_id = 1;
@@ -79,7 +82,7 @@ class CommentController extends Controller
         $review->rate = $request->rate;
         $review->book_id = $request->book_id;
         $bookId=$request->book_id;
-
+        
         $review->save();
        $this-> avgRate($book_id);
        //Session::flash('success', 'New review has been succesfully added!');
@@ -134,8 +137,9 @@ class CommentController extends Controller
 
        
         echo $id;
-         $review = Comment::find($id)->delete();
+         $review = Comment::find($id);
          $this->authorize('delete', $review);
+         $review ->delete();
       //  Session::flash('success', 'comment has been successfully deleted.');
       $book=Book::find($book_id);
       $comments = Comment::where('book_id',$book_id)->get();
