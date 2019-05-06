@@ -2,14 +2,14 @@
 
 $url = parse_url(getenv("DATABASE_URL"));
 
-$host = @$url["host"] || "127.0.0.1";
-$username = @$url["user"] || "root";
-$password = @$url["pass"] || "root";
-$database = substr($url["path"], 1) || "library";
-// $host = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $database = substr($url["path"], 1);
+//$host = @$url["host"] || "127.0.0.1";
+//$username = @$url["user"] || "root";
+//$password = @$url["pass"] || "root";
+//$database = substr($url["path"], 1) || "library";
+ $host = $url["host"];
+ $username = $url["user"];
+ $password = $url["pass"];
+ $database = substr($url["path"], 1);
 
 use Illuminate\Support\Str;
 
