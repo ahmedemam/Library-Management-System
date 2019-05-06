@@ -15,7 +15,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->isManager == 'yes') {
+        if (auth()->user()->isAdmin == 'yes') {
             return $next($request);
         }
         return redirect('unauthorized');

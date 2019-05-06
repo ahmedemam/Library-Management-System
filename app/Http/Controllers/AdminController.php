@@ -121,7 +121,7 @@ class AdminController extends Controller
     public function updateProfile(Request $request, User $user)
     {
         $this->validate($request, [
-            'user_name' => ['required', "unique:users,user_name,$user->id"],
+            'name' => ['required', "unique:users,user_name,$user->id"],
             'email' => ['required', "unique:users,email,$user->id"],
             'national_id' => ['required', "unique:users,national_id,$user->id"],
             'phone' => ['required', 'min:5', "unique:users,email,$user->id"]

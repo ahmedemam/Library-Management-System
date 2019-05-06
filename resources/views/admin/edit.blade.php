@@ -83,8 +83,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>isManager:</strong>
-                    <input type="text" name="isManager" value="{{ $user->isManager }}" class="form-control"
+                    <strong>isAdmin:</strong>
+                    <input type="text" name="isAdmin" value="{{ $user->isAdmin }}" class="form-control"
                            placeholder="isManager">
                 </div>
             </div>

@@ -22,7 +22,7 @@ class LoginController extends Controller
      * Where to redirect users after login.
      * @var string
      */
-        protected $redirectTo = '/home';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -33,23 +33,26 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function authenticated(Request $request, $user) {
-        if ($user->isManager =='yes') {
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->isAdmin == 'yes') {
             return redirect('/');
         }
         return redirect('/home');
     }
 
-    public function loginWithUsername() {
+    public function loginWithUsername()
+    {
         $login = request()->input('login');
-        $field = filter_var($login,FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
-        request()->merge([$field=>$login]);
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+        request()->merge([$field => $login]);
         return $field;
     }
+
     protected function credentials(Request $request)
     {
         $credentials = $request->only($this->loginWithUsername(), 'password');
-        $credentials['is_active'] = 'yes';
+        $credentials['status'] = 'yes';
         return $credentials;
     }
 }
