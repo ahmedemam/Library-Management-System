@@ -20,39 +20,46 @@ class LoginController extends Controller
 
     /**
      * Where to redirect users after login.
+     *
      * @var string
      */
     protected $redirectTo = '/home';
 
     /**
+     * Login username to be used by the controller.
+     *
+     * @var string
+     */
+    protected $username;
+
+    /**
      * Create a new controller instance.
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->username = $this->findUsername();
     }
 
-    protected function authenticated(Request $request, $user)
-    {
-        if ($user->isAdmin == 'yes') {
-            return redirect('/');
-        }
-        return redirect('/home');
-    }
-
-    public function loginWithUsername()
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function findUsername()
     {
         $login = request()->input('login');
-        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
-        request()->merge([$field => $login]);
-        return $field;
+        $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+        request()->merge([$fieldType => $login]);
+        return $fieldType;
     }
 
-    protected function credentials(Request $request)
+    /**
+     * Get username property.
+     * @return string
+     */
+    public function username()
     {
-        $credentials = $request->only($this->loginWithUsername(), 'password');
-        $credentials['status'] = 'yes';
-        return $credentials;
+        return $this->username;
     }
 }
