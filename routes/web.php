@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes(['register']);;
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/favourite', 'FavouriteController');
 Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
@@ -32,6 +36,12 @@ Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('login');
 
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin/', 'HomeController@admin')->middleware('admin');
+Route::get('/category/create', 'CategoryController@create');
+Route::get('/category', 'CategoryController@index');
+Route::post('/category/update', 'CategoryController@update');
+Route::resource('/category','CategoryController');
 });
 Route::get('/category/create', 'CategoryController@create');
 Route::get('/category/getall/{id}', 'CategoryController@getallbooks');
