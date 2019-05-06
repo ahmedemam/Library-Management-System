@@ -24,6 +24,7 @@
     <h3>{{$category->details}}</h3>
 
     <a class="btn btn-primary" href="/category/{{$category->id}}/edit"> Edit</a>
+    
     {!!Form::open(['action'=>['CategoryController@destroy',$category->id],'method'=>'POST','class'=>'pull0right'])!!}
 
     {{Form::hidden('_method','DELETE')}}
