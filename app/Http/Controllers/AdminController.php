@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         // return all users
-        $books = User::orderBy('id')->paginate(6);
+        $users = User::orderBy('id')->paginate(6);
         return view('admin.index', compact('users'));
     }
 
@@ -121,6 +121,5 @@ class AdminController extends Controller
     public function authUserData()
     {
         return view('admin.profile', Auth::user());
-
     }
 }
