@@ -120,8 +120,8 @@ class AdminController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $id = Auth::user()->id;
-        $user = User::find($id);
+//        $id = Auth::user()->id;
+//        $user = User::find($id);
 //        $user->image = Request::input('image');
 //        $user->name = Request::input('name');
 //        $user->email = Request::input('email');
@@ -129,6 +129,7 @@ class AdminController extends Controller
 //        $user->phone = Request::input('phone');
 //        $user->national_id = Request::input('national_id');
 //        $user->save();
-        return redirect()->route('admin.profile', ['user' => $user])->with('success', 'updated');
+//        return redirect()->route('admin.profile', ['user' => $user])->with('success', 'updated');
+        return view('admin.profile');
     }
 }
