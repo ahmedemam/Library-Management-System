@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+            <state relative-caret-position="1054">
+              <caret line="62" column="56" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -63,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="122" selection-start-line="122" selection-end-line="122" />
+            <state relative-caret-position="373">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -310,33 +310,6 @@
             <path>
               <item name="Library-Management-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Library-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="books" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library-Management-System" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -427,18 +400,18 @@
       <workItem from="1556831952461" duration="29000" />
       <workItem from="1556832023644" duration="1928000" />
       <workItem from="1557146992690" duration="17343000" />
-      <workItem from="1557218408339" duration="4281000" />
+      <workItem from="1557218408339" duration="4684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86326000" />
+    <option name="totallyTimeSpent" value="86729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19318181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19318181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -453,7 +426,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50151515" side_tool="true" weight="0.45783132" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49848485" visible="true" weight="0.54044753" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49848485" weight="0.54044753" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32874355" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.32874355" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -717,27 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" column="32" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="32" />
-          <folding>
-            <element signature="e#392#428#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/books/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -779,10 +728,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="56" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="e#392#428#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        <state relative-caret-position="373">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
