@@ -4,7 +4,6 @@
 
 use App\Book;
 use App\Comment;
-use App\Review;
 use App\User;
 use Faker\Generator as Faker;
 
