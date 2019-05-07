@@ -37,7 +37,7 @@
 					<!-- Left Side Of Navbar -->
 					<ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('AdminController@userProfile')}}">Profile</a>
+                            <a class="nav-link" href="{{url('/user/profile')}}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin">Users</a>
