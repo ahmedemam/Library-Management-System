@@ -45,13 +45,6 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Password:</strong>
-                    <input type="text" name="password" value="{{ $user->password }}" class="form-control"
-                           placeholder="Password">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
                     <strong>Phone:</strong>
                     <input type="text" name="phone" value="{{ $user->phone }}" class="form-control"
                            placeholder="Phone">

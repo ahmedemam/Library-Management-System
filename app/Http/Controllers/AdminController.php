@@ -120,15 +120,14 @@ class AdminController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $user_id = Auth::id();
-        $user = User::find($user_id);
-        $this->validate($request, [
-            'name' => ['required', "unique:users,user_name,$user_id"],
-            'email' => ['required', "unique:users,email,$user_id"],
-            'national_id' => ['required', "unique:users,national_id,$user_id"],
-            'phone' => ['required', 'min:5', "unique:users,email,$user_id"]
-        ]);
-        $user->update($request->all());
+        $user = Auth::user();
+        $user->image = $request->input('image');
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->national_id = $request->input('national_id');
+        $user->address = $request->input('address');
+        $user->phone = $request->input('phone');
+        $user->save();
         return redirect()->route('admin.profile', ['user' => $user])->with('success', 'updated');
     }
 }
