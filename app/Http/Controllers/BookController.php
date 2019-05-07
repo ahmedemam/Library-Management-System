@@ -31,7 +31,7 @@ class BookController extends Controller
         // return view('booksList', ['books' => $books]);
     }
 
-    //! all books by latest
+    //! all books by rate
     public function getLatest()
     {
         $books = Book::orderBy('created_at', 'desc')->paginate(6);
@@ -192,16 +192,15 @@ class BookController extends Controller
         return redirect()->route('books.index');
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
 
-    
-         $searchKey=$request->data;
-       $books = Book::where('title', 'LIKE', '%'.$searchKey.'%')->paginate(100);
-      
+        $searchKey = $request->data;
+        $books = Book::where('title', 'LIKE', '%' . $searchKey . '%')->paginate(100);
 
-         $categories = Category::all();
+        $categories = Category::all();
 
-           return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
 
     }
 }

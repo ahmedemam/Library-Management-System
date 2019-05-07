@@ -10667,3 +10667,30 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+
+.books-categories {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.books-categories ul {
+  margin: 0;
+}
+
+.books-categories ul li a {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.books-categories ul li a:hover {
+  background-color: #ccc;
+  color: #fff;
+  font-weight: bold;
+}
+
+.books-categories ul li:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}

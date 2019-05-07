@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+
     <main class="container">
         {{-- book data --}}
         <section class="row">
@@ -40,8 +41,8 @@
                 <form action="{{ route('comments.store')}}" method='POST'>
                     <form action="{{ route('comments.store')}}" method='POST'>
                         {{ csrf_field() }}
-                        <input type="text" name='review' class='form-control'>
-                        <input type="number" name='rate' class='form-control'>
+                        <input type="text" name='review' class='form-control' placeholder="comment">
+                        <input type="number" min="1" max="5" placeholder="rating" name='rate' class='form-control'>
                         <input type="hidden" name='book_id' value="{{$book->id}}">
                         <input type="submit" class='btn btn-danger' value='Add Comment'>
                     </form>
