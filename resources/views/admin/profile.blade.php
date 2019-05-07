@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form action="{{ route('AdminController@updateProfile',$user) }}" method="POST">
+    <form action="{{ url('/user/profileUpdate') }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
