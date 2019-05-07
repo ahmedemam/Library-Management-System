@@ -17,7 +17,8 @@ class Admin
     {
         if (auth()->user()->isAdmin == 'yes') {
             return $next($request);
+        } else {
+            return redirect('unauthorized');
         }
-        return redirect('unauthorized');
     }
 }
