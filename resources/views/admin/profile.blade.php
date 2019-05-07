@@ -17,7 +17,8 @@
             </ul>
         </div>
     @endif
-
+{{--    <form class="form-horizontal" role="form" method="POST"
+          action="{{ route('admin.updateProfile',['id' =>$user->id]) }}">--}}
     <form action="{{ url('/user/profileUpdate') }}" method="POST">
         @csrf
         @method('PUT')
