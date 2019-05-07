@@ -24,6 +24,8 @@ Route::get('/', function () {
 });
 
 Auth::routes(['register' => false]);
+Route::get('/user/profile', 'AdminController@userProfile');
+Route::get('/user/profileUpdate/', 'AdminController@updateProfile');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/favourites', 'FavouriteController');
@@ -39,7 +41,7 @@ Route::get('admin/', 'HomeController@admin')->middleware('admin');
 Route::get('/category/create', 'CategoryController@create');
 Route::get('/category', 'CategoryController@index');
 Route::post('/category/update', 'CategoryController@update');
-Route::resource('/category','CategoryController');
+Route::resource('/category', 'CategoryController');
 Route::get('/category/create', 'CategoryController@create');
 Route::get('/category/getall/{id}', 'CategoryController@getallbooks');
 Route::get('/category', 'CategoryController@index');
