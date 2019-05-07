@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Book;
 use App\LeasedBook;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -140,13 +141,27 @@ class CategoryController extends Controller
        $leasedbook->user_id=$user_id;
        $leasedbook->book_id=$id;
        $leasedbook->save();
-       return redirect()->route('books.index');
+        $categories = Category::all();
+         $books = Book::orderBy('id')->paginate(6);
+        return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+        
       }
       else
       {
         return redirect()->route('books.index')->with('error','sorry all copies are leased');
       }
-    
+    }
+
+    public function getAllLeased(){
+
+         $id = Auth::id();
+        $leased = LeasedBook::where('user_id', $id)->get();
+        $leasedBooks = [];
+        foreach ($leased as $key) {
+
+            array_push($leasedBooks, Book::find($key->book_id));
+        }
+        return view('leased.index')->with('leasedBooks', $leasedBooks);
     }
     
 }

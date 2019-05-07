@@ -80,10 +80,15 @@
                     <button type="submit" class="btn btn-danger">Delete</button>
                   </form>
                 </div>
+                  @if($book->copiesNumber > 0)
                 <div>
+                
                   <a class="btn btn-success w-100 mt-3"
+                  
                     href="{{url('/books/lease', [$book->id,Auth::user()->id])}}">Lease</a>
+                  
                 </div>
+                @endif
               </div>
             </div>
           </div>
