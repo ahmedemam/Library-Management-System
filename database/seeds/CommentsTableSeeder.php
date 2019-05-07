@@ -1,9 +1,10 @@
 <?php
 
+use App\Comment;
 use App\Review;
 use Illuminate\Database\Seeder;
 
-class ReviewsTableSeeder extends Seeder
+class CommentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +13,6 @@ class ReviewsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Review::class, 500)->create();
+        factory(Comment::class, 500)->create();
     }
 }
