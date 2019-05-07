@@ -10667,6 +10667,7 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+
 .books-categories {
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -10693,4 +10694,3 @@ a.text-dark:focus {
 .books-categories ul li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
-
