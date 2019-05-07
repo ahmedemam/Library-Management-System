@@ -120,7 +120,7 @@ class AdminController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $user->image = $request->input('image');
         $user->name = $request->input('name');
         $user->email = $request->input('email');
