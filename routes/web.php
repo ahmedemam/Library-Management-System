@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 Route::get('/user/profile', 'AdminController@userProfile');
-Route::get('/user/profileUpdate', 'AdminController@updateProfile');
+Route::get('/user/profileUpdate/{id}', 'AdminController@updateProfile');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/favourites', 'FavouriteController');

@@ -120,7 +120,7 @@ class AdminController extends Controller
 
     public function updateProfile(Request $request, User $user)
     {
-        $user_id = Auth::id;
+        $user_id = Auth::id();
         $this->validate($request, [
             'name' => ['required', "unique:users,user_name,$user_id"],
             'email' => ['required', "unique:users,email,$user_id"],
