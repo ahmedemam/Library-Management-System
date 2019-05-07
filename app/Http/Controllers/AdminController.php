@@ -115,7 +115,7 @@ class AdminController extends Controller
 
     public function userProfile()
     {
-        return view('admin.profile', Auth::user());
+        return view('admin.profile', ['user' => Auth::user()]);
     }
 
     public function updateProfile(Request $request, User $user)
