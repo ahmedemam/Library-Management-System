@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['register' => false]);
-Route::get('/user/profile', 'AdminController@userProfile')->name('user_profile');
+Route::get('/user/profile', 'AdminController@userProfile');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/favourites', 'FavouriteController');
