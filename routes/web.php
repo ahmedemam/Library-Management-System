@@ -51,5 +51,6 @@ Route::get('books/latest', 'BookController@getLatest')->name('books.latest');
 Route::get('books/rate', 'BookController@getHighRated')->name('books.rate');
 Route::resource('/books', 'BookController');
 Route::get('/books/lease/{id}/{user_id}', 'CategoryController@leasebooks');
+Route::get('/books/{id}', 'CommentController@index');
+//Route::resource('/books/{id}/comments', 'CommentController@store');
 Route::resource('/comments', 'CommentController');
-Route::resource('books.comments', 'CommentController');

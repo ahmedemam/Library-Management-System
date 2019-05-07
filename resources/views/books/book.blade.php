@@ -35,15 +35,18 @@
   {{-- comments --}}
   <section>
 
-
+        
     <div class="row" style='margin-top: 10px; margin-bottom: 10px;'>
-      <form action="{{ route('books.comments.store',$book->id)}}" method='POST'>
+    
+    <form action="{{ route('comments.store')}}" method='POST'>
         {{ csrf_field() }}
         <input type="text" name='review' class='form-control'>
         <input type="number" name='rate' class='form-control'>
         <input type="hidden" name='book_id' value="{{$book->id}}">
         <input type="submit" class='btn btn-danger' value='Add Comment'>
       </form>
+    
+    
     </div>
 
 
@@ -66,7 +69,8 @@
           <td>{{ $storedComment->review }}</td>
           <td>{{ $storedComment->rate }}</td>
           <td>
-            <form action="{{ route('books.comments.destroy', ['reviews'=>$storedComment->id,$book->id]) }}"
+          @can('delete', $storedComment)
+          <form action="{{ route('comments.destroy', ['reviews'=>$storedComment->id]) }}"
               method='POST'>
               {{ csrf_field() }}
 
@@ -74,6 +78,9 @@
                 
               <input type="submit" class='btn btn-danger' value='Delete'>
             </form>
+          
+          @endcan
+           
           </td>
 
         </tr>
