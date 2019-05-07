@@ -196,7 +196,7 @@ class BookController extends Controller
 
     
          $searchKey=$request->data;
-       $books = Book::where('title', 'LIKE', '%'.$searchKey.'%')->paginate(6);
+       $books = Book::where('title', 'LIKE', '%'.$searchKey.'%')->paginate(100);
       
 
          $categories = Category::all();
