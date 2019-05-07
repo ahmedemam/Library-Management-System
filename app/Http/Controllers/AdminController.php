@@ -118,9 +118,10 @@ class AdminController extends Controller
         return view('admin.profile', ['user' => Auth::user()]);
     }
 
-    public function updateProfile(Request $request, User $user)
+    public function updateProfile(Request $request)
     {
         $user_id = Auth::id();
+        $user = User::find($user_id);
         $this->validate($request, [
             'name' => ['required', "unique:users,user_name,$user_id"],
             'email' => ['required', "unique:users,email,$user_id"],
