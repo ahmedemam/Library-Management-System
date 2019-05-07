@@ -2,7 +2,6 @@
 @section('content')
 
     <main class="container">
-
         {{-- book data --}}
         <section class="row">
             <div class="col-sm-8">
@@ -46,8 +45,6 @@
                         <input type="hidden" name='book_id' value="{{$book->id}}">
                         <input type="submit" class='btn btn-danger' value='Add Comment'>
                     </form>
-
-
             </div>
 
 
@@ -89,10 +86,7 @@
                     </tbody>
                 </table>
             @endif
-
-
         </section>
-
         {{-- related Books --}}
         <section>
 
