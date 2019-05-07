@@ -12,7 +12,6 @@
         <div>
             <form action="{{route('books.search')}}" method="POST">
                 {{ csrf_field() }}
-
                 <input type="text" value="" name="data">
                 <button type="submit" class="btn btn-danger">Search</button>
             </form>
@@ -51,7 +50,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="each-book mb-3">
                                     <div class="card">
-                                        <img src="/storage/book_images/{{$book->image}}" class="card-img-top w-100"
+                                        <img src="{{$book->image}}" class="card-img-top w-100"
                                              height="250"
                                              alt="{{$book->title}}">
                                         <div class="card-body">
