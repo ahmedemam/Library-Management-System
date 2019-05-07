@@ -7,6 +7,7 @@ use App\Book;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Session;
 
 class CommentController extends Controller
 {
@@ -15,18 +16,19 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $book_id=0;
 
 
      public function __construct()
     {
         $this->middleware('auth');
     }
-    public function index($book_id)
+    public function index($id)
     {
         
         $Uid= Auth::id();
         $comments = Comment::where('user_id',$Uid);
-        $book=Book::where('id',$book_id);
+        $book=Book::where('id',$id);
         return view('books.book')->with(['book' => $book,'storedComments'=> $comments]);
     }
 
@@ -56,7 +58,8 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //return view('books.book');
+        // $this->authorize('create', Comment::class);
+
     }
 
     /**
@@ -65,32 +68,32 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$book_id)
+    public function store(Request $request)
     {
-        // echo "hello";
+      
         $user = Auth::user();
-        $this->authorize('create', $user);
+        
     
         $this->validate($request, [
             'review' => 'required|min:10|max:255',
+            'rate'=>'required|between:0,5'
         ]);
         
         $review = new Comment;
-        //$review->user_id = Auth::user()->id();
-        $review->user_id = 1;
+        $review->user_id = Auth::id();
         $review->review = $request->review;
         $review->rate = $request->rate;
         $review->book_id = $request->book_id;
         $bookId=$request->book_id;
-        
+        $this->authorize('store', $review);
         $review->save();
-       $this-> avgRate($book_id);
-       //Session::flash('success', 'New review has been succesfully added!');
-       $book=Book::find($book_id);
-       $comments = Comment::where('book_id',$book_id)->get();
-       return view('books.book')->with(['book' => $book])->with(['storedComments'=> $comments]);
-    // return redirect()->route('comments.index',$book_id);
-    }
+       $this-> avgRate($bookId);
+       $comments = Comment::where('book_id',$bookId)->get();
+       $book=Book::find($bookId);
+    //   return view('books.book')->with(['book' => $book])->with(['storedComments'=> $comments]);
+    return back()->with(['book' => $book])->with(['storedComments'=> $comments]);
+
+}
 
     /**
      * Display the specified resource.
@@ -132,21 +135,20 @@ class CommentController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,$book_id)
+    public function destroy($id)
     {
-
-       
-        echo $id;
          $review = Comment::find($id);
+         
+         $book=Book::find($review->book->id);
          $this->authorize('delete', $review);
          $review ->delete();
-      //  Session::flash('success', 'comment has been successfully deleted.');
-      $book=Book::find($book_id);
-      $comments = Comment::where('book_id',$book_id)->get();
-      return view('books.book')->with(['book' => $book])->with(['storedComments'=> $comments]);
+      
+      
+      $comments = Comment::where('book_id',$review->book->id)->get();
+      
+      return back()->with(['book' => $book])->with(['storedComments'=> $comments]);
+      //return view('books.book')->with(['book' => $book])->with(['storedComments'=> $comments]);
     }
-
-
 
   
 }

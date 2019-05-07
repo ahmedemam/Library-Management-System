@@ -46,10 +46,13 @@
                                 <a class="nav-link" href="/admin">Users</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/books">My Books<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/books">Books<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/favourites">Favourites</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/category">Categories</a>
                             </li>
                         @else
                             <a href="{{ route('login') }}">Login</a>

@@ -30,7 +30,18 @@ class CommentPolicy
      */
     public function create(User $user)
     {
-        return $user->id > 0;
+       return $user->comments->count() < 1 ;
+    }
+
+    public function store(User $user,Comment $comment)
+    {
+       $comments = Comment::where('user_id',$user->id)->get();
+       if(count($comments)>0){
+           return false;
+       }
+       else{
+           return true;
+       }
     }
 
     /**
