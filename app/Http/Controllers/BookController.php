@@ -194,14 +194,15 @@ class BookController extends Controller
     }
 
     public function search(Request $request){
+
     
          $searchKey=$request->data;
-        
-         $books= Book::search($searchKey);
-         
-          $categories = Category::all();
+       $books = Book::where('title', 'LIKE', '%'.$searchKey.'%')->paginate(6);
+      
 
-          return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
+         $categories = Category::all();
+
+           return view('books.index')->with(['storedBooks' => $books, 'allCategories' => $categories]);
 
     }
 }

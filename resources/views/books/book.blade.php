@@ -37,7 +37,7 @@
 
 
     <div class="row" style='margin-top: 10px; margin-bottom: 10px;'>
-      <form action="{{ route('books.comments.store',$book->id)}}" method='POST'>
+      <form action="{{ route('comments.store')}}" method='POST'>
         {{ csrf_field() }}
         <input type="text" name='review' class='form-control'>
         <input type="number" name='rate' class='form-control'>
@@ -66,7 +66,7 @@
           <td>{{ $storedComment->review }}</td>
           <td>{{ $storedComment->rate }}</td>
           <td>
-            <form action="{{ route('books.comments.destroy', ['reviews'=>$storedComment->id,$book->id]) }}"
+            <form action="{{ route('comments.destroy', ['reviews'=>$storedComment->id]) }}"
               method='POST'>
               {{ csrf_field() }}
 
