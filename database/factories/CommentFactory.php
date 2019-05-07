@@ -3,11 +3,11 @@
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
 use App\Book;
-use App\Review;
+use App\Comment;
 use App\User;
 use Faker\Generator as Faker;
 
-$factory->define(Review::class, function (Faker $faker) {
+$factory->define(Comment::class, function (Faker $faker) {
     return [
         'rate' => $faker->numberBetween(0, 5),
         'review' => $faker->text(),
