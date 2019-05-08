@@ -4,7 +4,7 @@
 <div class="container">
   {{-- header --}}
   <div class="text-center mb-5">
-    <h1>Show all Favourites</h1>
+    <h1>All Favourites</h1>
   </div>
 
      
@@ -41,9 +41,7 @@
     {!!Form::close()!!}
 
                   </div>
-                  <div>
-                    <button class="btn btn-success w-100 mt-3">Lease</button>
-                  </div>
+                 
                 </div>
               </div>
             </div>
